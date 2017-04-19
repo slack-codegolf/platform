@@ -1,0 +1,34 @@
+{
+  "name": "slack-codegolf",
+  "version": "0.0.1",
+  "description": "Play ground: https://codegolfbeta.slack.com/",
+  "scripts": {
+    "start": "node --optimize-for-size index.js",
+    "lint": "eslint --ignore-path .gitignore -c .eslintrc .",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "ava test/ && npm run lint",
+    "test:watch": "watch 'npm test' ./{lib,test}/"
+  },
+  "engines": {
+    "node": "6.4.0"
+  },
+  "dependencies": {
+    "@slack/client": "^3.9.0",
+    "bluebird": "^3.5.0",
+    "puid": "^1.0.7",
+    "redis": "^2.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slack-codegolf/heroku"
+  },
+  "author": "slack-codegolf team",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.19.0",
+    "eslint": "^3.19.0",
+    "eslint-config-google": "^0.7.1",
+    "watch": "^1.0.2"
+  },
+  "private": true
+}
