@@ -42,8 +42,10 @@ process.on('SIGINT', () => {
 
 // main
 const post = (msg, channel, wait) => {
-  // if (wait) setTimeout(() => rtm.sendMessage(msg, channel), 1000);
-  rtm.sendMessage(msg, channel);
+  if (wait)
+    setTimeout(() => rtm.sendMessage(msg, channel), 1000);
+  else
+    rtm.sendMessage(msg, channel);
 };
 
 /*
