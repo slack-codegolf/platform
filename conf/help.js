@@ -21,5 +21,5 @@ public class Main{
 }
 \`\`\`
 *Note*: java, c and cpp are compiled as Main.java, main.c and main.cpp, respectively.
-*Rule1*: pass 3 tests within 30s.
+*Rule1*: pass tests within 30s.
 *Rule2*: exit status must be 0.`;
