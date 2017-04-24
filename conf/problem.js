@@ -57,26 +57,4 @@ output:
 2017/4/1
 \`\`\``,
   },
-  4: {
-    title: 'Maze Runner',
-    desc: `Count the shortest distance from S(tart) to G(oal) in input's square where can move only white spaces.
-与えられた正方形の迷路のSからGまでの最短距離を出力して下さい
-
-input:
-\`\`\`
-#########
-#       #
-# ##### #
-#   #   #
-# #S### #
-#   # G #
-# ##### #
-#       #
-#########\`\`\`
-
-output:
-\`\`\`
-14
-\`\`\``,
-  },
 };
