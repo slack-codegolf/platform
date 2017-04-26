@@ -183,7 +183,8 @@ const onDirectMessage = function* (wsMsg) {
   // exec docker task
   // @TODO manage task by queue
   const inOuts = yield redis.getAsync(`q${q}`);
-  const {success, out} = golf.exec(JSON.parse(inOuts), lang, code);
+  // const {success, out} = yield golf.exec(JSON.parse(inOuts), lang, code);
+  const {success, out} = yield golf.exec(JSON.stringify({inOuts, lang, code}));
   const score = Buffer.byteLength(code, 'utf8');
   post([
     success ? 'Success :o:' : 'Failure :x:',

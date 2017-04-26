@@ -1,6 +1,0 @@
-node_modules
-test/
-artifacts/
-.eslintrc
-.editorconfig
-npm-debug.log

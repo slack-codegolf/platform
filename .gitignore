@@ -35,8 +35,6 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
-<<<<<<< HEAD
-=======
 
 # Local development
 *.env
@@ -44,4 +42,3 @@ jspm_packages
 *.rdb
 *.dev.*
 .DS_Store
->>>>>>> ef66b81... initial codegolf without docker
