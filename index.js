@@ -181,10 +181,8 @@ const onDirectMessage = function* (wsMsg) {
     return post(`Not compatible language. Only the following one.\n${version}`, channel, true);
 
   // exec docker task
-  // @TODO manage task by queue
   const inOuts = yield redis.getAsync(`q${q}`);
-  // const {success, out} = yield golf.exec(JSON.parse(inOuts), lang, code);
-  const {success, out} = yield golf.exec(JSON.stringify({inOuts, lang, code}));
+  const {success, out} = yield golf.exec(JSON.stringify({inOuts: JSON.parse(inOuts), lang, code}));
   const score = Buffer.byteLength(code, 'utf8');
   post([
     success ? 'Success :o:' : 'Failure :x:',
