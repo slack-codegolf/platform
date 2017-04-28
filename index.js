@@ -93,12 +93,14 @@ const onDirectMessage = function* (wsMsg) {
     const i = parseInt(m[1], 10);
     let res;
     if (problems[i]) {
-      res = `*Q${i}. ${problems[i].title}*\n${problems[i].desc}`;
+      const {title, owner, desc} = problems[i];
+      res = `*Q${i}. ${title}* (by ${rank.showUser(owner)})\n${desc}`;
       return post(res, channel, true);
     } else {
       res = '*Questions*\n';
       for (const q of Object.keys(problems)) {
-        res += `Q${q}. ${problems[q].title}\n`;
+        const {title, owner} = problems[q];
+        res += `*Q${q}. ${title}* (by ${rank.showUser(owner)})\n`;
       }
       res += 'Show details: `q 1`';
       return post(res, channel, true);
