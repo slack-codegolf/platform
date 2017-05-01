@@ -38,7 +38,7 @@ test('_setRank', (t) => {
   _setRank(rank, 20, 'darai0512');
 	t.deepEqual(rank, {10: '@fmy', 20: '@darai0512'});
   _setRank(rank, 10, 'espressivo');
-	t.deepEqual(rank, {10: '@fmy, @espressivo', 20: '@darai0512'});
+	t.deepEqual(rank, {10: '@fmy @espressivo', 20: '@darai0512'});
 });
 
 test('showRank', (t) => {
@@ -49,8 +49,8 @@ test('showRank', (t) => {
   ];
 	t.is(showRank(zrangeWithScores),
     '  1st: @a 10B\n' +
-    '  2nd: @b, @c 20B\n' +
-    '  3rd: @d, @e, @f 25B\n' +
+    '  2nd: @b @c 20B\n' +
+    '  3rd: @d @e @f 25B\n' +
     '  4th: @g 27B\n' +
     '  5th: @h 30B\n'
   );
@@ -100,7 +100,7 @@ test('setTotalScore and showTotalRank', (t) => {
 
 	t.is(showTotalRank(totalScoreOf),
     '  1st: @a 25B\n' +
-    '  2nd: @b, @c 40B\n' +
+    '  2nd: @b @c 40B\n' +
     '  3rd: @d 50B\n' +
     '  4th: @e 55B\n' +
     '  5th: @i 110B\n'
